@@ -13,11 +13,8 @@ class Filmapi extends StatefulWidget {
 }
 
 class _FilmapiState extends State<Filmapi> {
-  
   var searchItem = TextEditingController();
-  
-   
-   
+
   @override
   Widget build(BuildContext context) {
     print("i works");
@@ -145,8 +142,7 @@ class Userprovider extends ChangeNotifier {
   List<User> users = [];
   List<User> get userGetter => users;
   Future<void> getusers(String data) async {
-    final respons = await http
-        .get(Uri.parse("c"));
+    final respons = await http.get(Uri.parse("c"));
     print(respons);
     List<dynamic> decoded = jsonDecode(respons.body)["Search"];
     List<User> finalrespons = decoded
